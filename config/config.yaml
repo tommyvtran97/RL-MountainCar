@@ -1,0 +1,8 @@
+mountaincar:
+  learning_rate: 0.2
+  discount: 0.95
+  episodes: 500
+  epsilon: 0.9
+  start_epsilon_decay: 1
+
+  
