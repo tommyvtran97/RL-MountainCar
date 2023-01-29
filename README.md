@@ -19,7 +19,7 @@ In a similar way the agent can be evaluated:
 python mountaincar.py --evaluate --agent QL
 ```
 
-![alt text](https://github.com/tommyvtran97/blob/master/samples/DQN.gif) 
+![alt text](https://github.com/tommyvtran97/RL_DQN/blob/master/samples/DQN.gif) 
 
 
 
