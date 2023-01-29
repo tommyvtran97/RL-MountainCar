@@ -166,7 +166,7 @@ class AlgorithmRL():
             reward_total = 0
             while True:
                 action = np.argmax(model[discrete_state])
-                new_state, _, done, _, _ = env.step(action)
+                new_state, reward, done, _, _ = env.step(action)
                 discrete_state = self.get_discrete_state(new_state)
 
                 reward_total += reward
@@ -177,7 +177,7 @@ class AlgorithmRL():
 
         if agent == 'DQN':
             model = FCNet(env.observation_space.shape[0], env.action_space.n).to(device)
-            model.load_state_dict(torch.load(policy_net))
+            model.load_state_dict(torch.load(policy_net, map_location=device))
             model.eval()
 
             state = torch.tensor(state, dtype=torch.float32, device=device).unsqueeze(0)

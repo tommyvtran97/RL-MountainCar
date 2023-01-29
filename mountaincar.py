@@ -16,13 +16,11 @@ parser.add_argument('--evaluate', action='store_true')
 
 args = parser.parse_args()
 
-# Set device
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # Extract information from YAML
 with open("config/config.yaml", encoding="utf8") as yamlconf:
     config = yaml.safe_load(yamlconf)
-
 
 if args.train:
     # Create GYM environment
